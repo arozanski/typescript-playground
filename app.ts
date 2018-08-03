@@ -1,4 +1,4 @@
-// Exercise 1
+// Exercise 1 - Class Basics
 class Car {
   private name: string;
   acceleration: number = 0;
@@ -20,7 +20,7 @@ console.log(car.acceleration);
 car.accelerate(10);
 console.log(car.acceleration);
 
-// Exercise 2
+// Exercise 2 - Inheritance
 class BaseObject {
   width: number = 0;
   length: number = 0;
@@ -37,7 +37,7 @@ rectangle.length = 4;
 
 console.log(rectangle.calcSize());
 
-// Exercise 3
+// Exercise 3 - setter & getter
 class Person {
   private _firstName: string = 'Default';
 
