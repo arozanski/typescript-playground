@@ -12,7 +12,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-// Exercise 1
+// Exercise 1 - Class Basics
 var Car = /** @class */ (function () {
     function Car(name) {
         this.acceleration = 0;
@@ -29,7 +29,7 @@ car.honk();
 console.log(car.acceleration);
 car.accelerate(10);
 console.log(car.acceleration);
-// Exercise 2
+// Exercise 2 - Inheritance
 var BaseObject = /** @class */ (function () {
     function BaseObject() {
         this.width = 0;
@@ -50,7 +50,7 @@ var rectangle = new Rectangle();
 rectangle.width = 2;
 rectangle.length = 4;
 console.log(rectangle.calcSize());
-// Exercise 3
+// Exercise 3 - setter & getter
 var Person = /** @class */ (function () {
     function Person() {
         this._firstName = 'Default';
@@ -78,3 +78,38 @@ person.firstName = 'Ar';
 console.log(person.firstName);
 person.firstName = 'Armand';
 console.log(person.firstName);
+// Generics
+var MyMap = /** @class */ (function () {
+    function MyMap() {
+        this.map = {};
+    }
+    MyMap.prototype.setItem = function (key, item) {
+        this.map[key] = item;
+    };
+    MyMap.prototype.getItem = function (key) {
+        return this.map[key];
+    };
+    MyMap.prototype.clear = function () {
+        this.map = {};
+    };
+    MyMap.prototype.printMap = function () {
+        for (var key in this.map) {
+            console.log(key, this.map[key]);
+        }
+    };
+    return MyMap;
+}());
+var numberMap = new MyMap();
+numberMap.setItem('apples', 2);
+numberMap.setItem('bananas', 8);
+console.log(numberMap.getItem('apples'));
+numberMap.printMap();
+numberMap.clear();
+numberMap.printMap();
+var stringMap = new MyMap();
+stringMap.setItem('apples', '2');
+stringMap.setItem('bananas', '8');
+console.log(stringMap.getItem('apples'));
+stringMap.printMap();
+stringMap.clear();
+stringMap.printMap();
